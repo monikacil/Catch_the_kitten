@@ -1,0 +1,123 @@
+body
+{
+  margin = 0;
+  background-color: #ffcce5;
+  color: #000033;
+  font-family: 'Indie Flower', cursive;
+  font-size: 23px;
+}
+
+h1
+{
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-shadow: 3px 3px 5px #000033;
+}
+
+a:link {color: inherit;}
+a:visited {color: inherit;}
+a:active {color: inherit;}
+a:hover {color: #000066;}
+
+main
+{
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description
+{
+  float: left;
+  width: 250px;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 44px;
+  text-shadow: 3px 3px 5px #000033;
+}
+
+.board
+{
+  width: 700px;
+  min-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  float: left
+}
+
+.card
+{
+  width: 135px;
+  height: 135px;
+  display: inline-block;
+  margin: 1px;
+  background-image: url("img/main.jpg");
+  border-radius: 20px;
+  border: 3px solid #330033;
+  box-shadow: 3px 5px 7px 5px rgba(0,0,51,1);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(98%);
+}
+
+.card:hover
+{
+  border: 3px solid #cc0066;
+  box-shadow: 3px 5px 7px 5px #660033;
+  -webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+  transform: scale(1.1);
+  filter: brightness(100%);
+}
+
+.cardActive
+{
+  width: 135px;
+  height: 135px;
+  display: inline-block;
+  margin: 1px;
+  border-radius: 20px;
+  border: 3px solid #330033;
+  box-shadow: 3px 5px 7px 5px rgba(0,0,51,1);
+  cursor: default;
+  filter: brightness(100%);
+}
+
+.timer
+{
+  float: left;
+  width: 250px;
+  font-size: 70px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-shadow: 3px 3px 5px #000033;
+}
+
+.score
+{
+  float: left;
+  width: 250px;
+  font-size: 50px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-top: 50px;
+  text-shadow: 3px 3px 5px #000033;
+  padding-top: 60px;
+}
+.win
+{
+  width: 700px;
+  min-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  float: left;
+  padding-top: 200px;
+  font-size: 50px;
+  font-weight: 700;
+  text-shadow: 3px 3px 5px #000033;
+}
