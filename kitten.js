@@ -1,27 +1,20 @@
 var cards = ["cat0.jpg","cat7.jpg", "cat2.jpg", "cat2.jpg","cat5.jpg", "cat1.jpg", "cat3.jpg","cat5.jpg", "cat4.jpg", "cat3.jpg", "cat4.jpg", "cat7.jpg", "cat6.jpg", "cat0.jpg", "cat1.jpg", "cat6.jpg"];
 
-$("#c0").on("click.revealCard", function() {revealCard(0)})
-$("#c1").on("click.revealCard", function() {revealCard(1)})
-$("#c2").on("click.revealCard", function() {revealCard(2)})
-$("#c3").on("click.revealCard", function() {revealCard(3)})
-$("#c4").on("click.revealCard", function() {revealCard(4)})
-$("#c5").on("click.revealCard", function() {revealCard(5)})
-$("#c6").on("click.revealCard", function() {revealCard(6)})
-$("#c7").on("click.revealCard", function() {revealCard(7)})
-$("#c8").on("click.revealCard", function() {revealCard(8)})
-$("#c9").on("click.revealCard", function() {revealCard(9)})
-$("#c10").on("click.revealCard", function() {revealCard(10)})
-$("#c11").on("click.revealCard", function() {revealCard(11)})
-$("#c12").on("click.revealCard", function() {revealCard(12)})
-$("#c13").on("click.revealCard", function() {revealCard(13)})
-$("#c14").on("click.revealCard", function() {revealCard(14)})
-$("#c15").on("click.revealCard", function() {revealCard(15)})
+for(i=0; i<cards.length; i++){
+  $("#c"+i).on(
+    "click.revealCard",
+    function(a)
+    {
+      return function() {revealCard(a)};
+    }(i)
+  );
+}
 
 var oneVisible = false;
 var turnCounter = 0;
 var visible_nr;
 var is_blocked = false;
-var unreveald = 8;
+var unreveald = cards.length/2;
 var seconds = 0;
 var timer;
 
@@ -102,6 +95,7 @@ function revealCard(nr)
         }
       },1000);
     }
+
     else
     {
       setTimeout(function()
@@ -120,7 +114,7 @@ function revealCard(nr)
     }
     is_blocked = true;
     turnCounter++;
-    $(".score").html("Turn counter: </br>"+turnCounter);
+    $("#counter").html(turnCounter);
     oneVisible = false;
   }
 }
