@@ -34,6 +34,16 @@ function shuffle(a)
     }
 }
 
+
+function timer()
+{
+  var time = 0;
+
+  document.getElementById("timer").innerHTML = time;
+
+  setTimeout(timer,1000);
+}
+
 shuffle(cards);
 
 
@@ -43,6 +53,7 @@ function revealCard(nr)
   {
     return;
   }
+
   var image = "url(img/"+cards[nr]+")";
 
   $("#c"+nr).css("background-image", image);
@@ -67,9 +78,10 @@ function revealCard(nr)
         $("#c"+nr).css("opacity", 0);
         $("#c"+visible_nr).css("opacity", 0);
         is_blocked = false;
+
         if(unreveald == 0)
         {
-          $(".board").html("Congrats! You win in "+turnCounter+" turns!");
+          $(".board").html("Congrats!</br> You win in "+turnCounter+' turns!</br></br><span class="reset" onclick = "location.reload()">Try again!</span>');
           $(".board").addClass("win");
         }
       },1000);
@@ -87,7 +99,7 @@ function revealCard(nr)
         $("#c"+nr).css("background-image", "url('img/main.jpg')");
         $("#c"+visible_nr).css("background-image", "url('img/main.jpg')");
         is_blocked = false;
-      }, 2000);
+      }, 1000);
 
     }
     is_blocked = true;
