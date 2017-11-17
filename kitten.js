@@ -22,6 +22,8 @@ var turnCounter = 0;
 var visible_nr;
 var is_blocked = false;
 var unreveald = 8;
+var seconds = 0;
+var timer;
 
 function shuffle(a)
 {
@@ -34,14 +36,15 @@ function shuffle(a)
     }
 }
 
-
-function timer()
-{
-  var time = 0;
-
-  document.getElementById("timer").innerHTML = time;
-
-  setTimeout(timer,1000);
+function secToTime(seconds){
+  var hours = Math.floor(seconds/3600);
+  if(hours<10) hours = "0" + hours;
+  var minutes = Math.floor(seconds/60)- hours*60;
+  if(minutes<10) minutes = "0" + minutes;
+  var sek = seconds - ((hours * 3600) + (minutes * 60));
+  if(sek<10) sek = "0" + sek;
+  var totalTime = hours+ ":"+ minutes + ":" + sek;
+  return totalTime;
 }
 
 shuffle(cards);
@@ -49,6 +52,14 @@ shuffle(cards);
 
 function revealCard(nr)
 {
+  if(timer == undefined){
+    timer = setInterval(function(){
+      seconds++;
+      var totalTime = secToTime(seconds);
+      $("#timer").html(totalTime);
+    }, 1000);
+  }
+
   if(is_blocked == true)
   {
     return;
@@ -71,6 +82,10 @@ function revealCard(nr)
     if(cards[visible_nr] == cards[nr])
     {
       unreveald--;
+      if(unreveald == 0)
+      {
+        clearInterval(timer);
+      }
 
       setTimeout(function()
       {
@@ -80,12 +95,12 @@ function revealCard(nr)
 
         if(unreveald == 0)
         {
-          $(".board").html("Congrats!</br> You win in "+turnCounter+' turns!</br></br><span class="reset" onclick = "location.reload()">Try again!</span>');
-          $(".board").addClass("win");
+          $("#turnCounter").html(turnCounter);
+          $("#totalTime").html(secToTime(seconds));
+          $(".board").hide();
+          $(".win").show();
         }
       },1000);
-
-
     }
     else
     {
@@ -100,7 +115,6 @@ function revealCard(nr)
         is_blocked = false;
         $("#c"+visible_nr).on("click.revealCard", function(a){return function() {revealCard(a)}}(visible_nr));
         $("#c"+nr).on("click.revealCard", function(a){return function() {revealCard(a)}}(nr));
-
       }, 1000);
 
     }
