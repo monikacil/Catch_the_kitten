@@ -64,13 +64,15 @@ function revealCard(nr)
   {
     oneVisible = true;
     visible_nr = nr;
+    $("#c"+nr).off("click.revealCard");
   }
   else
   {
+    $("#c"+nr).off("click.revealCard");
+    $("#c"+visible_nr).off("click.revealCard");
+
     if(cards[visible_nr] == cards[nr])
     {
-      $("#c"+nr).off("click.revealCard");
-      $("#c"+visible_nr).off("click.revealCard");
       unreveald--;
 
       setTimeout(function()
@@ -99,6 +101,9 @@ function revealCard(nr)
         $("#c"+nr).css("background-image", "url('img/main.jpg')");
         $("#c"+visible_nr).css("background-image", "url('img/main.jpg')");
         is_blocked = false;
+        $("#c"+visible_nr).on("click.revealCard", function(a){return function() {revealCard(a)}}(visible_nr));
+        $("#c"+nr).on("click.revealCard", function(a){return function() {revealCard(a)}}(nr));
+
       }, 1000);
 
     }
