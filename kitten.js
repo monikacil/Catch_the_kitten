@@ -50,7 +50,7 @@ function revealCard(nr)
       seconds++;
       var totalTime = secToTime(seconds);
       $("#timer").html(totalTime);
-    }, 1000);
+    }, 500);
   }
 
   if(is_blocked == true)
@@ -109,7 +109,7 @@ function revealCard(nr)
         is_blocked = false;
         $("#c"+visible_nr).on("click.revealCard", function(a){return function() {revealCard(a)}}(visible_nr));
         $("#c"+nr).on("click.revealCard", function(a){return function() {revealCard(a)}}(nr));
-      }, 1000);
+      }, 900);
 
     }
     is_blocked = true;
