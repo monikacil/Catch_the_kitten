@@ -126,14 +126,18 @@ main
 
 .reset
 {
-  cursor: pointer;
-  font-size: 70px;
-  letter-spacing: 2px;
   padding: 20px;
   margin-top: 20px;
 }
 
-.reset:hover
+.link
+{
+  cursor: pointer;
+  font-size: 70px;
+  letter-spacing: 2px;
+}
+
+.link:hover
 {
   color: #FAEBD7;
 }
