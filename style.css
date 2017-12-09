@@ -1,6 +1,6 @@
 body
 {
-  margin = 0;
+    margin: 0;
   background-color: #ffcce5;
   color: #000033;
   font-family: 'Indie Flower', cursive;
@@ -45,6 +45,12 @@ main
   float: left;
 }
 
+.t {
+    -ms-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
 .card
 {
   width: 135px;
@@ -57,8 +63,6 @@ main
   border: 3px solid #330033;
   box-shadow: 3px 4px 6px 5px rgba(0,0,51,1);
   cursor: pointer;
-  transition: all 0.5s easy-in-out ;
-
 }
 
 .card:hover
@@ -82,7 +86,6 @@ main
   box-shadow: 3px 5px 7px 5px rgba(0,0,51,1);
   cursor: default;
   filter: brightness(100%);
-  transition: all 0.5s easy-in-out ;
 }
 
 #timer
