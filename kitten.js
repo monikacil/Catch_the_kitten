@@ -14,8 +14,6 @@ for (i = 0; i < cards.length; i++) {
 var oneVisible = false;
 var turnCounter = 0;
 var visible_nr;
-
-
 var is_blocked = false;
 var unreveald = cards.length / 2;
 var seconds = 0;
