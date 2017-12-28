@@ -1,3 +1,5 @@
+'use strict';
+
 var cards = ["cat0.jpg", "cat7.jpg", "cat2.jpg", "cat2.jpg", "cat5.jpg", "cat1.jpg", "cat3.jpg", "cat5.jpg", "cat4.jpg", "cat3.jpg", "cat4.jpg", "cat7.jpg", "cat6.jpg", "cat0.jpg", "cat1.jpg", "cat6.jpg"];
 
 for (var i = 0; i < cards.length; i++) {
@@ -20,8 +22,8 @@ var seconds = 0;
 var timer;
 
 function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
+    var j, x;
+    for (var i = a.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
         x = a[i];
         a[i] = a[j];
