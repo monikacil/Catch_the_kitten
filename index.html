@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="pl">
+<html lang="en">
 
 <head>
     <meta charset="utf-8"/>
     <title>Catch the kitten! Memory Game</title>
     <link rel="icon" href="favicon.ico"/>
-    <meta name="description" content="JS Memory Game with sweet kitten <3">
+    <meta name="description" content="JS Memory Game with sweet kittens <3">
     <meta name="keywords" content="kitten, cat, memory game, jQuery, javascript"/>
-    <meta name="author" content="MC"/>
+    <meta name="author" content="Monika Cilińska"/>
 
     <meta http-equiv="X-Ua-Compatible" content="IE=edge, chrome=1"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css"/>
 
@@ -24,66 +26,66 @@
 
 <body>
 
-<div id="prv-billboard" hidden></div>
+    <div id="prv-billboard" hidden></div>
 
-<header>
-    <h1>Catch the kitten!</h1>
-</header>
+    <header>
+        <h1>Catch the kitten!</h1>
+    </header>
 
-<main>
-    <article>
-        <div class="description">
-            Find all kittens pair in the least number of turns. Good luck and have fun!
-        </div>
-    </article>
-
-    <article>
-        <div class="board">
-            <div class="t card" id="c0"></div>
-            <div class="t card" id="c1"></div>
-            <div class="t card" id="c2"></div>
-            <div class="t card" id="c3"></div>
-
-            <div class="t card" id="c4"></div>
-            <div class="t card" id="c5"></div>
-            <div class="t card" id="c6"></div>
-            <div class="t card" id="c7"></div>
-
-            <div class="t card" id="c8"></div>
-            <div class="t card" id="c9"></div>
-            <div class="t card" id="c10"></div>
-            <div class="t card" id="c11"></div>
-
-            <div class="t card" id="c12"></div>
-            <div class="t card" id="c13"></div>
-            <div class="t card" id="c14"></div>
-            <div class="t card" id="c15"></div>
-        </div>
-        <div class="win" hidden>
-            <div>
-                Congrats!</br>
-                You win in <span id="turnCounter">0</span> turns!</br>
-                Your total time is</br>
-                <span id="totalTime">00:00:00</span>
+    <main>
+        <article>
+            <div class="description">
+                Find all kitten pairs in the least number of turns. Good luck and have fun!
             </div>
-            <div class="reset">
-                <span class="link" onclick="location.reload()">Try again!</span></div>
-        </div>
-    </article>
+        </article>
 
-    <article>
-        <div id="timer">00:00:00</div>
-        <div class="score">
-            Turn counter: </br><span id="counter">0</span>
-        </div>
-    </article>
+        <article>
+            <div class="board">
+                <div class="t card" id="c0"></div>
+                <div class="t card" id="c1"></div>
+                <div class="t card" id="c2"></div>
+                <div class="t card" id="c3"></div>
 
-</main>
+                <div class="t card" id="c4"></div>
+                <div class="t card" id="c5"></div>
+                <div class="t card" id="c6"></div>
+                <div class="t card" id="c7"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="kitten.js"></script>
+                <div class="t card" id="c8"></div>
+                <div class="t card" id="c9"></div>
+                <div class="t card" id="c10"></div>
+                <div class="t card" id="c11"></div>
 
+                <div class="t card" id="c12"></div>
+                <div class="t card" id="c13"></div>
+                <div class="t card" id="c14"></div>
+                <div class="t card" id="c15"></div>
+            </div>
+            <div class="win" hidden>
+                <div>
+                    Congrats!</br>
+                    You win in <span id="turnCounter">0</span> turns!</br>
+                    Your total time is</br>
+                    <span id="totalTime">00:00:00</span>
+                </div>
+                <div class="reset">
+                    <span class="link" onclick="location.reload()">Try again!</span>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div id="timer">00:00:00</div>
+            <div class="score">
+                Turn counter: </br><span id="counter">0</span>
+            </div>
+        </article>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="kitten.js"></script>
 
 </body>
 

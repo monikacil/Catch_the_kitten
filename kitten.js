@@ -1,6 +1,6 @@
 var cards = ["cat0.jpg", "cat7.jpg", "cat2.jpg", "cat2.jpg", "cat5.jpg", "cat1.jpg", "cat3.jpg", "cat5.jpg", "cat4.jpg", "cat3.jpg", "cat4.jpg", "cat7.jpg", "cat6.jpg", "cat0.jpg", "cat1.jpg", "cat6.jpg"];
 
-for (i = 0; i < cards.length; i++) {
+for (var i = 0; i < cards.length; i++) {
     $("#c" + i).on(
         "click.revealCard",
         function (a) {
