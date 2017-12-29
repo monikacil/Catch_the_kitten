@@ -62,7 +62,7 @@ function revealCard(nr) {
 
     $("#c" + nr).css("background-image", image);
     $("#c" + nr).addClass("cardActive");
-    $("#c" + nr).removeClass("card");
+    //$("#c" + nr).removeClass("card");
     $("#c" + nr).off("click.revealCard");
 
     if (oneVisible == false) {
@@ -92,9 +92,9 @@ function revealCard(nr) {
 
         else {
             setTimeout(function () {
-                $("#c" + nr).addClass("card");
+                //$("#c" + nr).addClass("card");
                 $("#c" + nr).removeClass("cardActive");
-                $("#c" + visible_nr).addClass("card");
+                //$("#c" + visible_nr).addClass("card");
                 $("#c" + visible_nr).removeClass("cardActive");
                 $("#c" + nr).removeAttr('style');
                 $("#c" + visible_nr).removeAttr('style');

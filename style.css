@@ -3,7 +3,6 @@ body {
     background-color: #ffcce5;
     color: #000033;
     font-family: 'Indie Flower', cursive;
-    font-size: 23px;
 }
 
 h1 {
@@ -16,14 +15,14 @@ h1 {
 }
 
 main {
-    width: 1200px;
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .description {
     float: left;
-    width: 250px;
+    width: 20%;
     text-align: center;
     letter-spacing: 4px;
     font-size: 44px;
@@ -32,8 +31,7 @@ main {
 }
 
 .board {
-    width: 700px;
-    min-height: 500px;
+    width: 55%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -48,69 +46,56 @@ main {
 }
 
 .card {
-    width: 135px;
-    height: 135px;
+    width: 105px;
+    height: 105px;
     display: inline-block;
     margin: 1px;
     filter: brightness(98%);
     background-image: url("img/main.jpg");
+    background-size: 105px;
     border-radius: 20px;
     border: 3px solid #330033;
     box-shadow: 3px 4px 6px 5px rgba(0, 0, 51, 1);
     cursor: pointer;
 }
 
-.card:hover {
-    border: 3px solid #cc0066;
-    box-shadow: 3px 5px 7px 5px #660033;
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    filter: brightness(100%);
-}
-
 .cardActive {
-    width: 135px;
-    height: 135px;
-    display: inline-block;
-    margin: 1px;
-    border-radius: 20px;
-    border: 3px solid #330033;
-    box-shadow: 3px 5px 7px 5px rgba(0, 0, 51, 1);
-    cursor: default;
     filter: brightness(100%);
 }
 
-#timer {
-    float: left;
-    width: 250px;
-    font-size: 70px;
-    letter-spacing: 4px;
-    font-weight: 700;
-    text-shadow: 3px 3px 5px #000033;
-    cursor: default;
+@media (hover:hover), (-moz-touch-enabled: 0){
+    .card:hover {
+        border: 3px solid #cc0066;
+        box-shadow: 3px 5px 7px 5px #660033;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        filter: brightness(100%);
+    }
 }
 
 .score {
     float: left;
-    width: 250px;
+    width: 20%;
     font-size: 50px;
     letter-spacing: 4px;
     font-weight: 700;
-    margin-top: 50px;
+    margin-top: 80px;
     text-shadow: 3px 3px 5px #000033;
-    padding-top: 60px;
     cursor: default;
 }
 
+#timer {
+    font-size: 70px;
+}
+
 .win {
-    width: 700px;
-    min-height: 200px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 56%;
     text-align: center;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 10px;
     float: left;
-    margin-top: 20px;
     font-size: 60px;
     font-weight: 700;
     text-shadow: 3px 3px 5px #000033;
@@ -120,7 +105,7 @@ main {
 
 .reset {
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .link {
@@ -131,4 +116,77 @@ main {
 
 .link:hover {
     color: #FAEBD7;
+}
+
+@media screen and (max-width:769px){
+    main{
+        width: auto;
+    }
+    .board{
+        width: 100%;
+    }
+    .card{
+        border: 1px solid #330033;
+        box-shadow: 3px 5px 5px 5px rgba(0, 0, 51, 1);
+        -webkit-tap-highlight-color:transparent;
+    }
+    .cardActive{
+        border: 1px solid #330033;
+        box-shadow: 3px 5px 5px 5px rgba(0, 0, 51, 1)
+    }
+    .description{
+        display: none;
+    }
+    .score{
+        float: none;
+        margin: 0px;
+        text-shadow: 1px 1px 3px #000033;
+        width: auto;
+        text-align: center;
+    }
+    #timer{
+        float: none;
+        text-shadow: 1px 1px 3px #000033;
+        margin: 0px;
+        width: auto;
+        text-align: center;
+    }
+    .link{
+        font-size: 60px;
+    }
+    .win {
+        width: 100%;
+        font-size: 54px;
+        text-shadow: 1px 1px 3px #000033;
+    }
+}
+@media screen and (max-width:500px){
+    .card{
+        width: 20vw;
+        height: 20vw;
+        background-size: 20vw;
+    }
+    .cardActive{
+        width: 20vw;
+        height: 20vw;
+        background-size: 20vw;
+    }
+    .score{
+        font-size: 30px;
+    }
+    #timer{
+        font-size: 30px;
+    }
+    h1{
+        font-size: 30px;
+        text-shadow: 1px 1px 3px #000033;
+    }
+    .win {
+        width: 100%;
+        font-size: 36px;
+        text-shadow: 1px 1px 3px #000033;
+    }
+    .link{
+        font-size: 40px;
+    }
 }
