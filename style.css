@@ -32,8 +32,6 @@ main {
 
 .board {
     width: 55%;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     float: left;
 }
@@ -49,7 +47,7 @@ main {
     width: 105px;
     height: 105px;
     display: inline-block;
-    margin: 1px;
+    margin: 4px;
     filter: brightness(98%);
     background-image: url("img/main.jpg");
     background-size: 105px;
@@ -158,6 +156,7 @@ main {
         width: 100%;
         font-size: 54px;
         text-shadow: 1px 1px 3px #000033;
+        margin: 0px;
     }
 }
 @media screen and (max-width:500px){
@@ -182,9 +181,7 @@ main {
         text-shadow: 1px 1px 3px #000033;
     }
     .win {
-        width: 100%;
         font-size: 36px;
-        text-shadow: 1px 1px 3px #000033;
     }
     .link{
         font-size: 40px;

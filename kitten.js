@@ -46,7 +46,7 @@ shuffle(cards);
 
 
 function revealCard(nr) {
-    if (timer == undefined) {
+    if (timer === undefined) {
         timer = setInterval(function () {
             seconds++;
             var totalTime = secToTime(seconds);
@@ -54,34 +54,35 @@ function revealCard(nr) {
         }, 1000);
     }
 
-    if (is_blocked == true) {
+    if (is_blocked === true) {
         return;
     }
 
     var image = "url(img/" + cards[nr] + ")";
+    var card = $("#c" + nr);
+    var visibleCard = $("#c" + visible_nr);
 
-    $("#c" + nr).css("background-image", image);
-    $("#c" + nr).addClass("cardActive");
-    //$("#c" + nr).removeClass("card");
-    $("#c" + nr).off("click.revealCard");
+    card.css("background-image", image);
+    card.addClass("cardActive");
+    card.off("click.revealCard");
 
-    if (oneVisible == false) {
+    if (oneVisible === false) {
         oneVisible = true;
         visible_nr = nr;
     }
     else {
-        if (cards[visible_nr] == cards[nr]) {
+        if (cards[visible_nr] === cards[nr]) {
             unreveald--;
-            if (unreveald == 0) {
+            if (unreveald === 0) {
                 clearInterval(timer);
             }
 
             setTimeout(function () {
-                $("#c" + nr).css("opacity", 0);
-                $("#c" + visible_nr).css("opacity", 0);
+                card.css("opacity", 0);
+                visibleCard.css("opacity", 0);
                 is_blocked = false;
 
-                if (unreveald == 0) {
+                if (unreveald === 0) {
                     $("#turnCounter").html(turnCounter);
                     $("#totalTime").html(secToTime(seconds));
                     $(".board").hide();
@@ -92,14 +93,13 @@ function revealCard(nr) {
 
         else {
             setTimeout(function () {
-                //$("#c" + nr).addClass("card");
-                $("#c" + nr).removeClass("cardActive");
-                //$("#c" + visible_nr).addClass("card");
-                $("#c" + visible_nr).removeClass("cardActive");
-                $("#c" + nr).removeAttr('style');
-                $("#c" + visible_nr).removeAttr('style');
+
+                card.removeClass("cardActive");
+                visibleCard.removeClass("cardActive");
+                card.removeAttr('style');
+                visibleCard.removeAttr('style');
                 is_blocked = false;
-                $("#c" + visible_nr).on("click.revealCard", function (a) {
+                visibleCard.on("click.revealCard", function (a) {
                     return function () {
                         revealCard(a)
                     }
