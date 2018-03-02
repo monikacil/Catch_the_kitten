@@ -24,31 +24,35 @@
     }
 
     .board {
-      @include fontSizeStyle(4rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       min-height: 80vh;
       min-width: (4*$minCardWidth)+6;
-      .card {
-        min-height: 141px;
-        min-width: 141px;
-        border-radius: 1.5rem;
-        background-image: url("../img/main.jpg");
-        cursor: pointer;
-        margin-bottom: 0.1rem;
-        filter: brightness(98%);
-        @extend %cardBorder;
-        &:hover {
-          transform: scale(0.95);
-          @extend %hoverCardBorder;
-        }
-        &active {
-          filter: brightness(100%);
+      #centerBoard{
+        @include fontSizeStyle(4rem);
+        .card {
+          min-height: 141px;
+          min-width: 141px;
+          border-radius: 1.5rem;
+          background-image: url("../img/main.jpg");
+          cursor: pointer;
+          margin-bottom: 0.1rem;
+          filter: brightness(98%);
+          @extend %cardBorder;
+          &:hover {
+            transform: scale(0.95);
+            @extend %hoverCardBorder;
+          }
+          &active {
+            filter: brightness(100%);
+          }
         }
       }
     }
     .gameOver {
       font-size: 6rem;
       text-align: center;
-      height: 80vh;
       .link {
         font-size: 8rem;
         cursor: pointer;
@@ -74,12 +78,10 @@
     .score {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       @include fontSizeStyle(4rem);
-      height: 24rem;
       font-size: 5rem;
       line-height: 6rem;
-      margin-top: 20vh;
     }
   }
 }
