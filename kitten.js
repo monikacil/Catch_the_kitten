@@ -86,7 +86,7 @@ function revealCard(nr) {
                     $("#turnCounter").html(turnCounter);
                     $("#totalTime").html(secToTime(seconds));
                     $(".board").hide();
-                    $(".win").show();
+                    $(".gameOver").addClass("win").show();
                 }
             }, 700);
         }

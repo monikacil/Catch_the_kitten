@@ -1,0 +1,93 @@
+.container{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1{
+    @include fontSizeStyle(9rem);
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    [class*="col-"] {
+      width: $baseColumnsWidth;
+      min-height: 0.1rem;
+      padding: 0.3rem;
+    }
+
+    @for $i from 1 through $columns {
+      .col-#{$i} {
+        width: $baseColumnsWidth * $i;
+      }
+    }
+
+    .board {
+      @include fontSizeStyle(4rem);
+      min-height: 80vh;
+      min-width: (4*$minCardWidth)+6;
+      .card {
+        min-height: 141px;
+        min-width: 141px;
+        border-radius: 1.5rem;
+        background-image: url("../img/main.jpg");
+        cursor: pointer;
+        margin-bottom: 0.1rem;
+        filter: brightness(98%);
+        @extend %cardBorder;
+        &:hover {
+          transform: scale(0.95);
+          @extend %hoverCardBorder;
+        }
+        &active {
+          filter: brightness(100%);
+        }
+      }
+    }
+    .gameOver {
+      font-size: 6rem;
+      text-align: center;
+      height: 80vh;
+      .link {
+        font-size: 8rem;
+        cursor: pointer;
+        text-decoration: #330019;
+        color: #97004A;
+      }
+    }
+    .win{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .description {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 5rem;
+        text-align: center;
+      }
+    }
+    .score {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include fontSizeStyle(4rem);
+      height: 24rem;
+      font-size: 5rem;
+      line-height: 6rem;
+      margin-top: 20vh;
+    }
+  }
+}
+.footer {
+  p {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+

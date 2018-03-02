@@ -1,0 +1,38 @@
+//variables:
+
+$mainTextColor: #330019;
+$displayInline: inline-block;
+$columns: 12;
+$baseColumnsWidth: 100%/$columns;
+$minCardWidth: 141px;
+
+//placeholders:
+
+%bgAppearance {
+  background-image: url("../img/egg-shell.png");
+  background-color: #fceaf1;
+}
+%clearStyle{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+%cardBorder{
+  border: 0.2rem solid $mainTextColor;
+  transition: all 0.5s;
+  box-shadow: 1px 2px 6px 2px $mainTextColor;
+}
+%hoverCardBorder{
+  border: 0.2rem solid #CD0065;
+  transition: all 0.5s;
+  box-shadow: 1px 2px 6px 2px #97004A;
+}
+
+//mixins:
+
+@mixin fontSizeStyle($font-size){
+  font-size: $font-size;
+  text-align: center;
+}
